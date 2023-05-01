@@ -123,17 +123,19 @@ const SessionPage = ({ session, sessions, userId, events }: Props) => {
                                 DELETE SESSION
                             </button>
                         )}
-                        <a
-                            href={`https://zuzalu-feedback.appliedzkp.org/session/${session.id}/new`}
-                            target="_blank"
-                            rel="noopener noreferrer"
+
+                        <button
+                            className={`flex w-full md:w-auto justify-center gap-2 items-center bg-zulalu-primary border border-primary text-white font-[600] py-[8px] px-[16px] rounded-[8px]`}
+                            onClick={() =>
+                                window.open(
+                                    `https://zuzalu-feedback.appliedzkp.org/session/${session.id}/new`,
+                                    "_blank"
+                                )
+                            }
                         >
-                            <button
-                                className={`flex w-full md:w-auto justify-center gap-2 items-center bg-zulalu-primary border border-primary text-white font-[600] py-[8px] px-[16px] rounded-[8px]`}
-                            >
-                                LEAVE FEEDBACK
-                            </button>
-                        </a>
+                            LEAVE FEEDBACK
+                        </button>
+
                         <DeleteSessionModal
                             isOpen={openDeleteSessionModal}
                             closeModal={closeDeleteSessionModal}
